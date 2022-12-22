@@ -12,7 +12,7 @@ int main(){
 	int len1 = strlen(word1);
 	int len2 = strlen(word2);
 	
-	printf("%d",lcs(word1,word2,len1,len2));
+//	printf("%d",lcs(word1,word2,len1,len2));
 	
 	int **matrix = (int**)malloc((len1+1)*sizeof(int*));
 
@@ -21,21 +21,26 @@ int main(){
 	}
 	
 	matrix = lcs2(word1,word2);
-	printf(" %d",matrix[len1][len2]);
+	printf("    length: %d",matrix[len1][len2]);
 	
 	char *sonuc = (char*)malloc((len1)*sizeof(char*));
 	i = len1;
 	j = len2;
 	k=0;
+	printf("\n");
 	while(i != 1){
 		while(matrix[i][j] == matrix[i][j-1]){
 			j = j-1;
 		}
-		sonuc[k] = word2[j];
-		printf(" %c ",sonuc[k]);
+		sonuc[k] = word2[j];  //ters ekliyor harfleri
 		k++;
 		i = i-1;
 	}
+	
+	for(i=0;i<k;i++){
+		printf(" %c ",sonuc[i]);
+	}
+	return 0;
 	
 }
 

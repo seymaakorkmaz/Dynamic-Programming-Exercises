@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int max(int a, int b) { return (a > b)? a : b; }
-int **knapsack3(int W, int wt[], int val[], int n);
+int** knapsack2(int W, int wt[], int val[], int n);
 int main(){
 	
 	int val[] = {1,6,18,22,28};
@@ -21,7 +21,7 @@ int main(){
 	
  	P = knapsack2(W,wt,val,n);
  	
- 	printf("%d",P[n][W]);
+ 	printf(" max weight: %d",P[n][W]);
  	i=0;
  	while(n != 1){
  		
@@ -37,8 +37,9 @@ int main(){
 	}
 	
 	j = i;
+	printf("\n\n Items received: \n");
 	for(i=0;i<j;i++){
-		printf("- %d ",alinan[i]);
+		printf(" %d ",alinan[i]);
 	}
 
 
@@ -47,7 +48,7 @@ int main(){
 
 
 
-int **knapsack2(int W, int wt[], int val[], int n)
+int** knapsack2(int W, int wt[], int val[], int n)
 {
     int i, w;
    

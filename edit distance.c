@@ -23,9 +23,9 @@ int main(){
 	
 	matrix = edit_distance(word1,word2);
 	
-	printf("%d",matrix[len1][len2]);
+	printf("  distance: %d",matrix[len1][len2]);
 	
-	printf(" %d",edit(word1,word2,len1,len2));
+//	printf(" %d",edit(word1,word2,len1,len2));
 	
 	return 0;
 	
